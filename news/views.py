@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def publications_list(request):
+    return render(request, 'news/publications_list.html', {})
