@@ -1,16 +1,19 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-</head>
-<body>
-{% for publication in publications  %}
-        <div>
-            <p>Author: {{ publication.author }}</p>
-            <h3>{{ publication.title }}</h3>
-            <p>{{ publication.text | linebreaksbr }}</p>
+{% extends 'news/base.html' %}
+
+{% block nav1-active %}
+    active
+{% endblock %}
+
+{% block content %}
+    {% for publication in publications  %}
+        <div class="container border border-left-0 border-right-0 border-top-0">
+            <div class="row">
+                <h1 class = "col-10">{{ publication.title }}</h1>
+                <p>{{ publication.text|linebreaksbr }}</p>
+                <div class="col-md-offset-4">
+                    <h5>{{ publication.author }} : {{ publication.published_date|date:'d-m-Y ; h:m' }}</h5>
+                </div>
+            </div>
         </div>
-{% endfor %}
-</body>
-</html>
+    {% endfor %}
+{% endblock content %}    
