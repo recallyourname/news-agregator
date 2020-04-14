@@ -8,19 +8,28 @@
 <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="static/image/favicon.ico" type="image/png">
     <title>News</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <ul class="navbar-nav">
-            <li class="navbar-item {% block nav1-active %}{% endblock %}">
-                <a href="{% url 'publications_list' %}" class="nav-link">All news</a>
-            </li>
-            <li class="navbar-item {% block nav2-active %}{% endblock %}">
-                <a href="{% url 'create_publication' %}" class="nav-link">Create publication</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'publications_list' %}">
+            <img src="{% static 'image/logo.svg' %}" width="120" height="60" class="d-inline-block align-top" alt="logo">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'publications_list' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create_publication' %}">Create publication</a>
+                </li>
+            </ul>
         <ul class="navbar-nav ml-auto">
             <li>
                 <a href="" class="nav-link"><i class="fa fa-user-plus" style="margin-right: 5px"></i>Sign-up</a>
@@ -28,7 +37,9 @@
             <li>
                 <a href="" class="nav-link"><i class="fa fa-user" style="margin-right: 5px"></i>Sign-in</a>
             </li>
-        </ul>
+        </ul>        
+        </form>
+        </div>
     </nav>
     {% block content %}
     {% endblock content %}

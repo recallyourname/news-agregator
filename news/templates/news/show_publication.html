@@ -1,0 +1,13 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+    <div class="container border-bottom">
+        <div class="row">
+            <h1>{{ publication.title }}</h1>
+            <p>{{ publication.text }}...</p>
+            <div class="col-md-offset-4">
+                <h5>{{ publication.author }} : {{ publication.published_date|date:'d-m-Y ; h:m' }}</h5>
+            </div>
+        </div>
+    </div>    
+{% endblock content %} 

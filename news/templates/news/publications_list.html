@@ -6,10 +6,10 @@
 
 {% block content %}
     {% for publication in publications  %}
-        <div class="container border border-left-0 border-right-0 border-top-0">
+        <div class="container border-bottom">
             <div class="row">
-                <h1 class = "col-10">{{ publication.title }}</h1>
-                <p>{{ publication.text|linebreaksbr }}</p>
+                <h2>{{ publication.title }}</h2>
+                <p>{{ publication.text|slice:"0:250" }}...<a href="detail/{{ publication.id }}">read more</a></p>
                 <div class="col-md-offset-4">
                     <h5>{{ publication.author }} : {{ publication.published_date|date:'d-m-Y ; h:m' }}</h5>
                 </div>
