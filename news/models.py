@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import  timezone
-from django.urls.base import reverse_lazy
+from django.urls.base import reverse
 
     
 class Publication(models.Model):
@@ -19,5 +19,5 @@ class Publication(models.Model):
         return self.title   
 
     def get_absolute_url(self):
-        return reverse_lazy("publication_detail", kwargs={"pk": self.pk})
+        return reverse('detail_view', kwargs={'pk':self.pk})
     

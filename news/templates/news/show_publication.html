@@ -1,12 +1,24 @@
 {% extends 'news/base.html' %}
 
 {% block content %}
-    <div class="container border-bottom">
-        <div class="row">
-            <h1>{{ publication.title }}</h1>
-            <p>{{ publication.text }}...</p>
-            <div class="col-md-offset-4">
-                <p class="text-muted">{{ publication.published_date|date:'d/m/Y | h:m' }}<p>
+    <div class="container p-md-2">
+        <div class="row border rounded overflow-hidden">
+            <div class="col p-4 d-flex flex-column position-static">    
+                <div class="d-flex">
+                    <h2>{{ publication.title }}</h2>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Settings
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li class="dropdown-item"><a href="{% url 'update_publication' object.id %}">Edit</a></li>
+                            <li class="dropdown-item"><a href="{% url 'delete_publication' object.id %}">Delete</a></li>
+                        </ul>
+                  </div>
+                </div>
+                <p class="text-muted col-md-auto">{{ publication.published_date|date:'d/m/Y | h:m' }}</p>
+                <p class="card-text md-auto">{{ publication.text}}</p>        
             </div>
         </div>
     </div>    

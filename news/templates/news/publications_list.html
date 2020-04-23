@@ -9,7 +9,7 @@
         <div class="container p-md-2">
             <div class="row border rounded overflow-hidden">
                 <div class="col p-4 d-flex flex-column position-static">
-                    <h2>{{ publication.title }}</h2>
+                    <h2><a class="article-title text-dark" href="detail/{{ publication.id }}">{{ publication.title }}</a></h2>
                     <p class="text-muted col-md-auto">{{ publication.published_date|date:'d/m/Y | h:m' }}</p>
                     <p class="card-text md-auto">{{ publication.text|slice:"0:350" }}...  <a href="detail/{{ publication.id }}">read more</a></p>            
                 </div>

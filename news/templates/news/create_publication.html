@@ -3,7 +3,17 @@
 {% block nav2-active %}active{% endblock %}
 
 {% block content %}
-    <form action="">
-    
-    </form>
+{% load crispy_forms_tags %}
+    <div class="content-section">
+        <form action="" method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">New publication</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button type="submit" class="btn-outline-dark">Submit</button>
+            </div>
+        </form>
+    </div>
 {% endblock content %}
