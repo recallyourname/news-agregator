@@ -9,7 +9,7 @@ class Publication(models.Model):
     title = models.CharField(max_length = 300)
     text = models.TextField()
     create_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank = True, null = True)
+    published_date = models.DateTimeField(blank = True, null = True, default=timezone.now)
 
     def publish(self):
         self.publish_date = timezone.now()

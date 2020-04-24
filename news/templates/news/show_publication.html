@@ -15,7 +15,7 @@
                             <li class="dropdown-item"><a href="{% url 'update_publication' object.id %}">Edit</a></li>
                             <li class="dropdown-item"><a href="{% url 'delete_publication' object.id %}">Delete</a></li>
                         </ul>
-                  </div>
+                    </div>
                 </div>
                 <p class="text-muted col-md-auto">{{ publication.published_date|date:'d/m/Y | h:m' }}</p>
                 <p class="card-text md-auto">{{ publication.text}}</p>        
