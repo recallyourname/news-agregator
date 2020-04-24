@@ -1,5 +1,11 @@
 {% extends 'news/base.html' %}
 
+{% block title_in_navbar %}
+    <li class="nav-item active">
+        <a class="nav-link disabled" href="#">{{ publication.title }}</a>
+    </li>
+{% endblock title_in_navbar %}
+
 {% block content %}
     <div class="container p-md-2">
         <div class="row border rounded overflow-hidden">
