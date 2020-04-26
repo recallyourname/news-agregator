@@ -12,7 +12,7 @@ class TestModels(TestCase):
         )
 
     def test_str_return(self):
-        self.assertEquals(self.publication.__str__(), self.publication.title)
+        self.assertEquals(self.publication.__str__(), 'title')
 
     def test_get_absolute_url(self):
-        self.assertEquals(self.publication.get_absolute_url(), reverse('detail_view', kwargs={'pk':self.publication.pk}))
+        self.assertEquals(self.publication.get_absolute_url(), '/detail/1/')
