@@ -5,15 +5,11 @@ from django.urls.base import reverse
 
     
 class Publication(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
+    author = models.CharField(max_length=50)
     title = models.CharField(max_length = 300)
     text = models.TextField()
     create_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank = True, null = True, default=timezone.now)
-
-    def publish(self):
-        self.publish_date = timezone.now()
-        self.save()
 
     def __str__(self):
         return self.title   
