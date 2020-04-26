@@ -47,7 +47,7 @@ class TestUrls(TestCase):
             CreatePublication
         )
 
-    def test_detail_view_url_is_resolved(self):
+    def test_detail_view(self):
         """
         Test if the detail_view is opening by the given url adress with
         the primary key of created in setUp instance
@@ -63,7 +63,7 @@ class TestUrls(TestCase):
         )
 
 
-    def test_update_publication_url_is_resolved(self):
+    def test_update_publication(self):
         """
         Test if update view is opening by given url with the
         primary key of created instance
@@ -78,7 +78,7 @@ class TestUrls(TestCase):
             'news/create_publication.html'
         )
 
-    def test_delete_publication_url_is_resolved(self):
+    def test_delete_publication(self):
         """
         Test if delete view is opening by given url with the
         primary key of created instance
