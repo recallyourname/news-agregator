@@ -32,7 +32,6 @@ class TestUrls(TestCase):
         as in view class
         """
         url = reverse('publications_list')
-        print(resolve(url))
         self.assertEqual(
             resolve(url).func.view_class,
             PublicationsList
@@ -43,7 +42,6 @@ class TestUrls(TestCase):
         Test if create_publication form is opening by the url given
         """
         url = reverse('create_publication')
-        print(resolve(url))
         self.assertEqual(
             resolve(url).func.view_class,
             CreatePublication
